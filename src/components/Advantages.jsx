@@ -98,10 +98,10 @@ export default function Advantages() {
   md:after:border-l-[300px] after:border-l-transparent
   md:after:border-r-[300px] after:border-r-transparent"
           >
-            <h4 className="text-2xl md:text-4xl font-bold px-2 text-left w-full md:w-3/4 justify-self-center mt-4">
+            <h4 className="text-2xl md:text-4xl font-bold px-4 text-left w-full md:w-3/4 justify-self-center mt-4">
               {advantages[currentIndex].title}
             </h4>
-            <p className="text-sm text-white mt-2 text-left px-2 w-full md:w-3/4 justify-self-center">
+            <p className="text-sm text-white mt-2 text-left px-4 w-full md:w-3/4 justify-self-center">
               {advantages[currentIndex].description}
             </p>
           </div>

@@ -4,7 +4,10 @@ import SectionTitle from "@/ui/SectionTitle";
 
 export default function Contact() {
   return (
-    <section className="flex bg-white gap-6 md:gap-0 flex-col mt-12" id="contact">
+    <section
+      className="flex bg-white gap-6 md:gap-0 flex-col mt-12"
+      id="contact"
+    >
       <SectionTitle title="Contact us" />
       <div className="flex gap-6 md:gap-0 flex-col md:flex-row">
         <div className="relative w-full md:w-2/5 lg:w-1/2 flex justify-center">
@@ -87,7 +90,7 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-white text-[#ff6600] py-2 px-4 rounded-md hover:bg-gray-100 transition-colors cursor-pointer"
+                className="w-full bg-white text-[#ff6600] py-2 px-4 rounded-md hover:bg-gray-100 transition-colors cursor-pointer font-semibold text-sm"
               >
                 Send Message
               </button>

@@ -99,7 +99,7 @@ export default function Navbar() {
                   clipPath: "polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)",
                 }}
               >
-                contact us
+                Contact us
               </a>
             </li>
           </ul>
