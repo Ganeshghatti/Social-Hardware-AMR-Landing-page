@@ -2,7 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaHome, FaBox, FaTools, FaQuestionCircle } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { GiMedal } from "react-icons/gi";
 
 const navLinks = [
@@ -74,6 +75,24 @@ export default function Footer() {
                 info@socialhardware.in
               </a>
             </p>
+            <div className="flex items-center gap-4 mt-4">
+              <a
+                href="https://www.linkedin.com/company/social-hardware/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-[#ff6600] transition-colors"
+              >
+                <FaLinkedin size={24} />
+              </a>
+              <a
+                href="https://x.com/social_hardware"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-[#ff6600] transition-colors"
+              >
+                <FaXTwitter size={24} />
+              </a>
+            </div>
           </div>
         </div>
 

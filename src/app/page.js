@@ -2,6 +2,7 @@ import Advantages from "@/components/Advantages";
 import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
+import Customize from "@/components/Customize";
 import Footer from "@/ui/Footer";
 import Navbar from "@/ui/Navbar";
 import Image from "next/image";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Products />
+      <Customize />
       <Contact />
       <Advantages />
       <Footer />

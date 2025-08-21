@@ -14,24 +14,24 @@ export default function Hero() {
   return (
     <section className="flex w-full bg-white gap-6 md:gap-0 flex-col-reverse md:flex-row items-center" id="home">
       <div className="relative flex flex-col w-full md:w-3/5 lg:w-1/2 z-10">
-        <h1 className="text-3xl md:text-5xl font-bold mb-3 text-black">
+        <h1 className="text-3xl md:text-5xl font-bold mb-5 text-black lg:leading-[52px]">
           Indigenous <span className="text-[#ff6600]">Robots</span> for Global
           Challenges
         </h1>
-        <h3 className="text-md md:text-xl text-gray-700 mb-3">
+        <p className="lg:text-lg text-gray-700 mb-5">
           Our cutting-edge robotic systems are built in India with global
           standards in mind—tailored for businesses seeking performance,
           scalability, and long-term value.
-        </h3>
-        <button 
+        </p>
+        <button
           onClick={handleScrollToProducts}
-          className="flex items-center bg-[#ff6600] text-white p-3 w-fit rounded cursor-pointer hover:bg-orange-600 transition-colors font-semibold "
+          className="flex items-center bg-[#ff6600] text-white p-4 w-fit rounded cursor-pointer hover:bg-orange-600 transition-colors font-semibold "
         >
           Discover Products →
         </button>
-        <div className="mt-12 flex flex-col">
-          <div className="flex items-center gap-2">
-            <p className="font-bold text-[#ff6600]">our products</p>
+        <div className="mt-16 flex flex-col">
+          <div className="flex items-center gap-4">
+            <p className="font-bold text-[#ff6600]">Our Products</p>
             <svg
               width="100"
               height="2"
@@ -42,34 +42,34 @@ export default function Hero() {
               <line y1="1" x2="100" y2="1" stroke="#ff6600" strokeWidth="2" />
             </svg>
           </div>
-          <div className="flex mt-2 gap-2 w-fit">
+          <div className="flex mt-2 gap-6 w-fit">
             <Image
               src="/Hero/p1.png"
               alt="Product 1"
               width={90}
               height={90}
-              className="object-contain"
+              className="object-contain hover:scale-110 transition-transform duration-300"
             />
             <Image
               src="/Hero/p2.png"
               alt="Product 2"
               width={90}
               height={90}
-              className="object-contain"
+              className="object-contain hover:scale-110 transition-transform duration-300"
             />
             <Image
               src="/Hero/p3.png"
               alt="Product 3"
-              width={90}
-              height={90}
-              className="object-contain"
+              width={100}
+              height={100}
+              className="object-contain hover:scale-110 transition-transform duration-300"
             />
             <Image
               src="/Hero/p4.png"
               alt="Product 4"
-              width={90}
-              height={90}
-              className="object-contain"
+              width={110}
+              height={110}
+              className="object-contain hover:scale-110 transition-transform duration-300"
             />
           </div>
         </div>
