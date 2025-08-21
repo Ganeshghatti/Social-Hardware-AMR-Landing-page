@@ -1,11 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import SectionTitle from "@/ui/SectionTitle";
+import { FaUser, FaEnvelope, FaPhone, FaCommentAlt } from "react-icons/fa";
+
 
 export default function Contact() {
   return (
     <section
-      className="flex bg-white gap-6 md:gap-0 flex-col mt-12"
+      className="flex bg-white gap-6 md:gap-0 flex-col mt-12 ml-2"
       id="contact"
     >
       <SectionTitle title="Contact us" />
@@ -32,8 +34,8 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-white"
-                >
+                  className=" text-sm font-medium text-white flex gap-2 items-center"
+                ><FaUser className="text-white" />
                   Name
                 </label>
                 <input
@@ -47,8 +49,8 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-white"
-                >
+                  className=" text-sm font-medium text-white flex gap-2 items-center"
+                ><FaEnvelope className="text-white" />
                   Email
                 </label>
                 <input
@@ -62,8 +64,8 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-sm font-medium text-white"
-                >
+                  className=" text-sm font-medium text-white flex gap-2 items-center"
+                ><FaPhone className="text-white" />
                   Phone
                 </label>
                 <input
@@ -76,8 +78,8 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-white"
-                >
+                  className=" text-sm font-medium text-white flex gap-2 items-center"
+                ><FaCommentAlt className="text-white" />
                   Message
                 </label>
                 <textarea

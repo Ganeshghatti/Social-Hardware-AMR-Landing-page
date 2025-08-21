@@ -12,8 +12,22 @@ import {
 import SectionTitle from "@/ui/SectionTitle";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import Modal from "@/components/Modal";
 
 export default function Products() {
+  const [selectedProduct, setSelectedProduct] = React.useState(null);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const openModal = (product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
+
   const products = [
     {
       name: "REACH-V1",
@@ -240,12 +254,62 @@ export default function Products() {
     },
   ];
 
+  const renderSpecTable = (title, specs) => {
+    return (
+      <div className="mb-6">
+        <h3 className="text-lg font-semibold text-[#ff6600] mb-3">{title}</h3>
+        <div className="bg-gray-50 rounded-lg p-4">
+          <table className="w-full">
+            <tbody>
+              {Object.entries(specs).map(([key, value]) => (
+                <tr key={key} className="border-b border-gray-200 last:border-b-0">
+                  <td className="py-2 font-medium text-gray-700 capitalize">
+                    {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                  </td>
+                  <td className="py-2 text-gray-600">{value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
+  const renderHardwareComponents = (components) => {
+    return (
+      <div className="mb-6">
+        <h3 className="text-lg font-semibold text-[#ff6600] mb-3">Hardware Components</h3>
+        <div className="bg-gray-50 rounded-lg p-4">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-gray-300">
+                <th className="text-left py-2 font-medium text-gray-700">Component</th>
+                <th className="text-left py-2 font-medium text-gray-700">Quantity</th>
+                <th className="text-left py-2 font-medium text-gray-700">Remarks/Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {components.map((item, index) => (
+                <tr key={index} className="border-b border-gray-200 last:border-b-0">
+                  <td className="py-2 font-medium text-gray-700">{item.component}</td>
+                  <td className="py-2 text-gray-600">{item.quantity || '-'}</td>
+                  <td className="py-2 text-gray-600">{item.remarks || item.description || '-'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section
-      className="bg-white z-10 relative text-black flex flex-col"
+      className="bg-white z-10 relative text-black flex flex-col ml-2"
       id="products"
     >
-      <SectionTitle title="Our Products" />
+      <SectionTitle title="Our Products" /><br />
 
       <Carousel
         className="w-full mt-6"
@@ -287,7 +351,10 @@ export default function Products() {
                     {product.description}
                   </p>
                 </CardContent>
-                <button className="bg-[#ff6600] px-3 py-2 text-white w-fit self-center text-sm rounded-lg mt-4 hover:bg-orange-600 transition-colors cursor-pointer">
+                <button 
+                  onClick={() => openModal(product)}
+                  className="bg-[#ff6600] px-4 py-3 text-white w-fit self-center text-sm rounded-lg mt-4 hover:bg-orange-600 transition-colors cursor-pointer"
+                >
                   Technical Specifications →
                 </button>
               </Card>
@@ -295,6 +362,35 @@ export default function Products() {
           ))}
         </CarouselContent>
       </Carousel>
+
+      <Modal open={isModalOpen} onClose={closeModal}>
+        <div className="p-6">
+          <div className="flex items-center mb-6">
+            <div className="relative w-24 h-24 mr-4">
+              <Image
+                src={selectedProduct?.image}
+                alt={selectedProduct?.name}
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800">{selectedProduct?.name}</h2>
+              <p className="text-gray-600">{selectedProduct?.description}</p>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            {selectedProduct?.techSpecs.general && renderSpecTable("General Information", selectedProduct.techSpecs.general)}
+            {selectedProduct?.techSpecs.powerAndController && renderSpecTable("Power Supply & Controller", selectedProduct.techSpecs.powerAndController)}
+            {selectedProduct?.techSpecs.allTerrain && renderSpecTable("All-Terrain Capabilities", selectedProduct.techSpecs.allTerrain)}
+            {selectedProduct?.techSpecs.mechanical && renderSpecTable("Mechanical Specifications", selectedProduct.techSpecs.mechanical)}
+            {selectedProduct?.techSpecs.additional && renderSpecTable("Additional Information", selectedProduct.techSpecs.additional)}
+            {selectedProduct?.techSpecs.environment && renderSpecTable("Environment Conditions", selectedProduct.techSpecs.environment)}
+            {selectedProduct?.techSpecs.hardwareComponents && renderHardwareComponents(selectedProduct.techSpecs.hardwareComponents)}
+          </div>
+        </div>
+      </Modal>
     </section>
   );
 }

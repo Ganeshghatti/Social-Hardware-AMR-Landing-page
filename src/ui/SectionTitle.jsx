@@ -8,7 +8,7 @@ export default function SectionTitle({ title, property }) {
         height="45"
         viewBox="0 0 45 45"
         fill="none"
-        className="absolute -left-4 -top-4"
+        className="absolute -left-6 -top-6"
         xmlns="http://www.w3.org/2000/svg"
       >
         <rect width="6" height="45" fill="#FF8700" />
@@ -27,7 +27,7 @@ export default function SectionTitle({ title, property }) {
         height="44"
         viewBox="0 0 45 44"
         fill="none"
-        className="absolute -right-4 -bottom-4"
+        className="absolute -right-6 -bottom-6"
         xmlns="http://www.w3.org/2000/svg"
       >
         <rect

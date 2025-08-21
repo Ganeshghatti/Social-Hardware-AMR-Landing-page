@@ -55,12 +55,9 @@ export default function Navbar() {
         <a
           href="#contact"
           onClick={(e) => handleNavClick(e, "#contact")}
-          className="px-6 py-2 border-2 border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition-colors font-semibold relative"
-          style={{
-            clipPath: "polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)",
-          }}
+          className="px-6 py-2 border-2 border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition-colors font-semibold"
         >
-          contact us
+          Contact
         </a>
       </div>
       {/* Hamburger Icon (Mobile) */}
@@ -94,12 +91,9 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, "#contact")}
-                className="block px-4 py-2 border-2 border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition-colors font-semibold mt-2"
-                style={{
-                  clipPath: "polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)",
-                }}
+                className="block px-6 py-2 border-2 border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition-colors font-semibold mt-2"
               >
-                Contact us
+                Contact
               </a>
             </li>
           </ul>
