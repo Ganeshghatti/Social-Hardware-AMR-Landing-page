@@ -332,7 +332,7 @@ export default function Products() {
         <CarouselContent className="w-full">
           {products.map((product, index) => (
             <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 p-4">
-              <Card className="rounded-2xl border-[#ff6600] border-3 shadow-lg overflow-hidden h-full flex flex-col justify-around">
+              <Card className="rounded-2xl border-gray-300 hover:border-gray-300 border shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-105 overflow-hidden h-full flex flex-col justify-around">
                 <div className="relative w-full h-36">
                   <Image
                     src={product.image}
@@ -351,7 +351,7 @@ export default function Products() {
                     {product.description}
                   </p>
                 </CardContent>
-                <button 
+                <button
                   onClick={() => openModal(product)}
                   className="bg-[#ff6600] px-4 py-3 text-white w-fit self-center text-sm rounded-lg mt-4 hover:bg-orange-600 transition-colors cursor-pointer"
                 >

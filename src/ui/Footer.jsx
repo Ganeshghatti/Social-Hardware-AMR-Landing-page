@@ -9,7 +9,7 @@ import { GiMedal } from "react-icons/gi";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Products", href: "#products" },
-  { name: "Customize", href: "#customize" },
+  // { name: "Customize", href: "#customize" },
   { name: "Why Us", href: "#whyus" },
 ];
 
@@ -101,8 +101,8 @@ export default function Footer() {
           <h3 className="font-semibold flex items-center gap-2">
             <GiMedal className="text-[#ff6600]" />
             ISO Certifications
-          </h3>
-          <ul className="list-disc list-inside space-y-1">
+          </h3><br />
+          <ol className="list-decimal list-inside space-y-2 ml-1 ">
             <li>
               <span className="font-semibold">ISO 9001:2015</span>: Quality
               Management System
@@ -127,12 +127,12 @@ export default function Footer() {
               <span className="font-semibold">ISOMEC 17025</span>: Laboratory
               Testing Accreditation
             </li>
-          </ul>
+          </ol>
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-col space-y-2 items-center text-center">
-          <h3 className="font-semibold mb-2">Links</h3>
+        <div className="flex flex-col space-y-1 items-center text-center">
+          <h3 className="font-semibold">Links</h3><br />
           <ul className="flex flex-col gap-3 text-sm text-gray-800">
             {navLinks.map((link) => (
               <li key={link.name}>
