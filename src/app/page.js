@@ -8,6 +8,7 @@ import Footer from "@/ui/Footer";
 import Navbar from "@/ui/Navbar";
 import Image from "next/image";
 import CompanyProfile from "@/components/CompanyProfile";
+import EclipseModules from "@/components/EclipseModules";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <Products />
       <Customize />
+      <EclipseModules />
       <Contact />
       <Advantages />
       {/* <AdvantagesV1 /> */}
