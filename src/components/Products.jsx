@@ -293,7 +293,7 @@ export default function Products() {
                 </CardContent>
                 <button
                   onClick={() => openModal(product)}
-                  className="bg-[#ff6600] px-4 py-3 text-white w-fit self-center text-sm rounded-lg mt-4 hover:bg-orange-600 transition-colors cursor-pointer"
+                  className="bg-[#ff6600] px-4 py-3 text-white w-fit self-center text-sm rounded-lg mt-4 hover:bg-orange-600 transition-colors cursor-pointer font-semibold"
                 >
                   Technical Specifications →
                 </button>
@@ -311,7 +311,7 @@ export default function Products() {
                 src={selectedProduct?.image}
                 alt={selectedProduct?.name}
                 fill
-                className="object-cover rounded-lg"
+                className="object-contain rounded-lg"
               />
             </div>
             <div>

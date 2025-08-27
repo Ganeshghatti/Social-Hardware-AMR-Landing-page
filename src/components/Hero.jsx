@@ -34,7 +34,10 @@ export default function Hero() {
           Discover Products →
         </button>
         <div className="mt-16 flex flex-col">
-          <div className="flex items-center gap-4">
+          <div
+            className="flex items-center gap-4 cursor-pointer"
+            onClick={handleScrollToProducts}
+          >
             <p className="font-bold text-[#ff6600]">Our Products</p>
             <svg
               width="100"
@@ -46,34 +49,37 @@ export default function Hero() {
               <line y1="1" x2="100" y2="1" stroke="#ff6600" strokeWidth="2" />
             </svg>
           </div>
-          <div className="flex mt-2 gap-6 w-fit">
+          <div
+            className="flex mt-2 gap-6 w-fit"
+            onClick={handleScrollToProducts}
+          >
             <Image
               src="/Hero/p1.png"
               alt="Product 1"
               width={90}
               height={90}
-              className="object-contain hover:scale-110 transition-transform duration-300"
+              className="object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"
             />
             <Image
               src="/Hero/p2.png"
               alt="Product 2"
               width={90}
               height={90}
-              className="object-contain hover:scale-110 transition-transform duration-300"
+              className="object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"
             />
             <Image
               src="/Hero/p3.png"
               alt="Product 3"
               width={100}
               height={100}
-              className="object-contain hover:scale-110 transition-transform duration-300"
+              className="object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"
             />
             <Image
               src="/Hero/p4.png"
               alt="Product 4"
               width={110}
               height={110}
-              className="object-contain hover:scale-110 transition-transform duration-300"
+              className="object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"
             />
           </div>
         </div>
@@ -101,13 +107,6 @@ export default function Hero() {
         height={400}
         className="absolute -bottom-1/5 left-0 w-4/5 h-full object-cover z-0 opacity-15"
       />
-      {/* <Image
-        src="/Hero/designbg.png"
-        alt="Background pattern"
-        width={500}
-        height={400}
-        className="absolute top-0 left-0 w-2/3 h-full object-cover"
-      /> */}
     </section>
   );
 }

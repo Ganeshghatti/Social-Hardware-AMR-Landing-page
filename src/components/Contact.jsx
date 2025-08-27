@@ -60,7 +60,7 @@ export default function Contact() {
       id="contact"
     >
       <SectionTitle title="Contact us" />
-      <div className="flex gap-6 md:gap-0 flex-col md:flex-row">
+      <div className="flex gap-6 md:gap-0 flex-col md:flex-row items-center justify-center">
         <div className="relative w-full md:w-2/5 lg:w-1/2 flex justify-center">
           <Image
             src="/Contact/Icon.png"
