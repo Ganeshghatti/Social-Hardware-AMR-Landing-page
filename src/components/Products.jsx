@@ -185,12 +185,12 @@ export default function Products() {
                   key={key}
                   className="border-b border-gray-200 last:border-b-0"
                 >
-                  <td className="py-2 font-medium text-gray-700 capitalize">
+                  <td className="py-2 font-medium text-gray-700 capitalize w-1/2">
                     {key
                       .replace(/([A-Z])/g, " $1")
                       .replace(/^./, (str) => str.toUpperCase())}
                   </td>
-                  <td className="py-2 text-gray-600">{value}</td>
+                  <td className="py-2 text-gray-600 w-1/2">{value}</td>
                 </tr>
               ))}
             </tbody>
