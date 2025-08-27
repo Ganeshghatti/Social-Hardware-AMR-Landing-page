@@ -128,7 +128,7 @@ export default function Customise() {
                   className="w-full"
                 />
                 <div className="flex justify-between text-sm text-gray-600 mt-2">
-                  <span>200 mm</span>
+                  <span>500 mm</span>
                   <span className="font-semibold">
                     Selected: {formData.reach} mm
                   </span>
