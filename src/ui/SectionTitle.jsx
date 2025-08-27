@@ -21,7 +21,7 @@ export default function SectionTitle({ title, property }) {
         />
       </svg>
 
-      <h2 className="font-bold text-black text-3xl">{title}</h2>
+      <h2 className="font-bold text-black md:text-3xl text-xl">{title}</h2>
       <svg
         width="45"
         height="44"

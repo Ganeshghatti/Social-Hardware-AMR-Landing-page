@@ -9,6 +9,7 @@ import Navbar from "@/ui/Navbar";
 import Image from "next/image";
 import CompanyProfile from "@/components/CompanyProfile";
 import EclipseModules from "@/components/EclipseModules";
+import Gallery from "@/components/Gallery";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Advantages />
       {/* <AdvantagesV1 /> */}
       <CompanyProfile />
+      <Gallery />
       <Footer />
     </main>
   );
