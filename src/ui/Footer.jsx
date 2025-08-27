@@ -9,8 +9,8 @@ import { GiMedal } from "react-icons/gi";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Products", href: "#products" },
-  // { name: "Customize", href: "#customize" },
-  { name: "Why Us", href: "#whyus" },
+  { name: "Customize", href: "#customize" },
+  { name: "Company Profile", href: "#company-profile" },
 ];
 
 export default function Footer() {
