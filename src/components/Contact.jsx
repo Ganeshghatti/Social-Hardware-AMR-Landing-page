@@ -5,6 +5,7 @@ import Image from "next/image";
 import SectionTitle from "@/ui/SectionTitle";
 import { FaUser, FaEnvelope, FaPhone, FaCommentAlt } from "react-icons/fa";
 import axios from "axios";
+import { useToast } from "./Toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,7 +16,7 @@ export default function Contact() {
     countryCode: "+91",
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const { showSuccess, showError } = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,7 +29,6 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
 
     try {
       const response = await axios.post(
@@ -44,10 +44,10 @@ export default function Contact() {
           message: "",
           countryCode: "+91",
         });
-        alert("Message sent successfully!");
+        showSuccess("Message sent successfully! We'll get back to you soon.");
       }
     } catch (error) {
-      setError("Failed to send message. Please try again.");
+      showError("Failed to send message. Please try again later.");
       console.error("Error sending message:", error);
     } finally {
       setLoading(false);
@@ -151,7 +151,6 @@ export default function Contact() {
                   className="mt-1 w-full bg-transparent border-b-2 border-black focus:outline-none focus:border-black text-black"
                 ></textarea>
               </div>
-              {error && <div className="text-red-500 text-sm">{error}</div>}
               <button
                 type="submit"
                 disabled={loading}

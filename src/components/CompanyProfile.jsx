@@ -2,15 +2,13 @@
 
 import React, { useState } from "react";
 import { ImProfile } from "react-icons/im";
-import Modal from "./Modal";
 import axios from "axios";
+import { useToast } from "./Toast";
 
 export default function CompanyProfile() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalMessage, setModalMessage] = useState("");
-  const [error, setError] = useState("");
+  const { showSuccess, showError } = useToast();
 
   const validateEmail = (email) => {
     return /\S+@\S+\.\S+/.test(email);
@@ -18,9 +16,8 @@ export default function CompanyProfile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
     if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
+      showError("Please enter a valid email address.");
       return;
     }
     setLoading(true);
@@ -30,20 +27,13 @@ export default function CompanyProfile() {
         { email }
       );
       if (res.status === 200) {
-        setModalMessage(
-          "Thank you! The company profile will be sent to your inbox."
-        );
-        setModalOpen(true);
+        showSuccess("Thank you! The company profile will be sent to your inbox.");
         setEmail("");
       } else {
-        setModalMessage(
-          "Sorry, there was a problem sending the profile. Please try again later."
-        );
-        setModalOpen(true);
+        showError("Sorry, there was a problem sending the profile. Please try again later.");
       }
     } catch (err) {
-      setModalMessage("Network error. Please try again later.");
-      setModalOpen(true);
+      showError("Network error. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -60,7 +50,7 @@ export default function CompanyProfile() {
           Request Company Profile
         </h3>
         <p className="text-sm text-gray-500 mb-4">
-          Share your email with us, and we’ll send the company profile straight
+          Share your email with us, and we'll send the company profile straight
           to your inbox!
         </p>
         <form
@@ -86,19 +76,7 @@ export default function CompanyProfile() {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
-        {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
       </div>
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-        <div className="p-8 text-center">
-          <h4 className="text-2xl font-bold mb-4">{modalMessage}</h4>
-          <button
-            className="mt-4 bg-[#ff6600] text-white px-6 py-2 rounded hover:bg-[#e65c00] transition-colors font-semibold"
-            onClick={() => setModalOpen(false)}
-          >
-            Close
-          </button>
-        </div>
-      </Modal>
     </section>
   );
 }
