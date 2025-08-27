@@ -285,7 +285,7 @@ export default function Products() {
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <CardHeader>

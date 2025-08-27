@@ -9,8 +9,9 @@ import { GiMedal } from "react-icons/gi";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Products", href: "#products" },
-  { name: "Customize", href: "#customize" },
+  { name: "Customise", href: "#customise" },
   { name: "Company Profile", href: "#company-profile" },
+  { name: "Gallery", href: "#gallery" },
 ];
 
 export default function Footer() {
@@ -75,31 +76,12 @@ export default function Footer() {
                 info@socialhardware.in
               </a>
             </p>
-            <div className="flex items-center gap-4 mt-4">
-              <a
-                href="https://www.linkedin.com/company/social-hardware/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#ff6600] transition-colors"
-              >
-                <FaLinkedin size={24} />
-              </a>
-              <a
-                href="https://x.com/social_hardware"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#ff6600] transition-colors"
-              >
-                <FaXTwitter size={24} />
-              </a>
-            </div>
           </div>
         </div>
 
         {/* ISO Certifications */}
         <div className="text-sm space-y-2">
           <h3 className="font-semibold flex items-center gap-2">
-            <GiMedal className="text-[#ff6600]" />
             ISO Certifications
           </h3>
           <br />
@@ -148,6 +130,24 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+          <div className="flex items-center gap-4 mt-4">
+            <a
+              href="https://www.linkedin.com/company/social-hardware/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-[#ff6600] transition-colors"
+            >
+              <FaLinkedin size={24} />
+            </a>
+            <a
+              href="https://x.com/social_hardware"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-[#ff6600] transition-colors"
+            >
+              <FaXTwitter size={24} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -7,8 +7,9 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Products", href: "#products" },
-  { name: "Customize", href: "#customize" },
+  { name: "Customise", href: "#customise" },
   { name: "Company Profile", href: "#company-profile" },
+  { name: "Gallery", href: "#gallery" },
 ];
 
 export default function Navbar() {

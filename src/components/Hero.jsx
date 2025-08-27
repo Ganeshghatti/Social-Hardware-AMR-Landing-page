@@ -84,7 +84,7 @@ export default function Hero() {
           alt=""
           width={400}
           height={400}
-          className="object-contain absolute z-0 w-4/5"
+          className="object-contain absolute z-0 w-4/5 opacity-60"
         />
         <Image
           src="/Hero/robot.png"

@@ -84,15 +84,15 @@ export default function Advantages() {
           {advantages.map((advantage, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
               <div className="h-72">
-                <div className="flex flex-col gap-4 bg-[#ff6600] pl-6 pr-6 pb-6 rounded-xl items-center h-full">
+                <div className="flex flex-col gap-4 bg-white pl-6 pr-6 pb-6 rounded-xl items-center h-full border border-gray-400">
                   <div className="relative w-full h-13 flex justify-center">
-                    <div className="absolute w-26 h-26 pt-13 bottom-0 bg-white rounded-full flex items-center justify-center opacity-50">
-                      <span className="text-black text-4xl">
+                    <div className="absolute w-26 h-26 pt-13 bottom-0 bg-white rounded-full flex items-center justify-center bg-gray-100 border border-gray-300 shadow-md">
+                      <span className="text-[#ff6600] text-4xl">
                         {advantage.icon}
                       </span>
                     </div>
                   </div>
-                  <h5 className="text-2xl text-white font-semibold text-center">
+                  <h5 className="text-2xl text-black font-semibold text-center">
                     {advantage.title}
                   </h5>
                   <p className="text-sm text-[#383838] text-center">
