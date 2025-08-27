@@ -1,27 +1,31 @@
-"use client"
+"use client";
 
 import React from "react";
 import Image from "next/image";
 
 export default function Hero() {
   const handleScrollToProducts = () => {
-    const productsSection = document.getElementById('products');
+    const productsSection = document.getElementById("products");
     if (productsSection) {
-      productsSection.scrollIntoView({ behavior: 'smooth' });
+      productsSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section className="flex w-full bg-white gap-6 md:gap-0 flex-col-reverse md:flex-row items-center" id="home">
+    <section
+      className="flex px-6 lg:px-24 w-full bg-white gap-6 md:gap-0 flex-col-reverse md:flex-row items-center"
+      id="home"
+    >
       <div className="relative flex flex-col w-full md:w-3/5 lg:w-1/2 z-10">
         <h1 className="text-3xl md:text-5xl font-bold mb-5 text-black lg:leading-[52px]">
-          Indigenous <span className="text-[#ff6600]">Robots</span> for Global
-          Challenges
+          Made in India <br />
+          <span className="text-[#ff6600]">Engineered for the World.</span>
         </h1>
         <p className="lg:text-lg text-gray-700 mb-5">
-          Our cutting-edge robotic systems are built in India with global
-          standards in mind—tailored for businesses seeking performance,
-          scalability, and long-term value.
+          From shop floors to smart factories, we deliver customizable cobots,
+          UGVs, vision systems, and end-of-arm tooling. Driven by Indigenous
+          innovation, our technology meets global standards and empowers
+          industries to scale beyond limits{" "}
         </p>
         <button
           onClick={handleScrollToProducts}

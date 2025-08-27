@@ -40,35 +40,6 @@ export default function Products() {
           degreesOfFreedom: 7,
           repeatPositionAccuracy: "0.05 mm",
           robotWeight: "30 kg",
-          driveType: "Harmonic Gear DC Motor",
-          communicationProtocol: "Ethernet",
-          encoder: "Incremental",
-        },
-        powerAndController: {
-          powerSupply: "DC 24V - 48V",
-          controllerUnit: "Intel Core-i3 Processor",
-        },
-        hardwareComponents: [
-          {
-            component: "Cobot Arms",
-            quantity: 2,
-            remarks: "Mounted on rigid structure via four anchor points",
-          },
-          {
-            component: "Controller Unit",
-            quantity: 1,
-            remarks: "Executes software commands",
-          },
-          {
-            component: "Power Supply Unit",
-            quantity: 1,
-            remarks: "Supplies power to arms and controller",
-          },
-        ],
-        environment: {
-          operatingTemperature: "0°C to +45°C",
-          storageTemperature: "0°C to +60°C",
-          humidity: "< 95%, Non-Condensing",
         },
       },
     },
@@ -83,35 +54,6 @@ export default function Products() {
           degreesOfFreedom: 7,
           repeatPositionAccuracy: "0.28 mm",
           robotWeight: "45 kg",
-          driveType: "Harmonic Gear DC Motor",
-          communicationProtocol: "Ethernet",
-          encoder: "16-bit Dual Absolute",
-        },
-        powerAndController: {
-          powerSupply: "DC 48V",
-          controllerUnit: "Intel Core-i3 Processor",
-        },
-        hardwareComponents: [
-          {
-            component: "Cobot Arms",
-            quantity: 2,
-            remarks: "Mounted on rigid structure via four anchor points",
-          },
-          {
-            component: "Controller Unit",
-            quantity: 1,
-            remarks: "Executes software commands",
-          },
-          {
-            component: "Power Supply Unit",
-            quantity: 1,
-            remarks: "Supplies power to arms and controller",
-          },
-        ],
-        environment: {
-          operatingTemperature: "0°C to +45°C",
-          storageTemperature: "0°C to +60°C",
-          humidity: "< 95%, Non-Condensing",
         },
       },
     },
@@ -126,9 +68,7 @@ export default function Products() {
           weight: "100 kg",
           height: "365 mm",
           maxLoad: "120 kg",
-          ratedTorque: "144 Nm",
           groundClearance: "70 mm",
-          driveType: "48V DC Brushless Motor",
           maxDragWeight: "150 kg",
         },
         allTerrain: {
@@ -163,13 +103,9 @@ export default function Products() {
       techSpecs: {
         general: {
           dimensions: "1010 x 800 x 435 mm",
-          interiorSize: "267 x 304 x 243 mm",
           weight: "180 kg",
           height: "426 mm",
           maxLoad: "260 kg",
-          ratedTorque: "144 Nm",
-          driveType: "48V DC Brushless Motor",
-          bodyMaterial: "Stainless Steel",
         },
         allTerrain: {
           maxClimbAngle: "40° (including stairs)",
@@ -206,12 +142,7 @@ export default function Products() {
       techSpecs: {
         general: {
           degreesOfFreedom: "10-DOF per finger",
-          configuration: "5-Finger Bionic Hand",
-          mountingCapability: "Universal",
           mainMaterial: "Aluminium, Carbon Fiber",
-          actuationMethod: "Linear Actuator (100:1, 12V)",
-          communicationProtocol: "CAN",
-          controlInterface: "Position-based Control",
           positionAccuracy: "+0.1 mm",
         },
         mechanical: {
@@ -233,12 +164,7 @@ export default function Products() {
       techSpecs: {
         general: {
           degreesOfFreedom: "2-DOF",
-          configuration: "Precision Gripper",
-          mountingCapability: "Universal",
           weight: "0.5 kg",
-          actuationMethod: "Digital Servo Motor",
-          communicationProtocol: "CAN",
-          controlInterface: "Position-based Control",
           positionAccuracy: "+0.1 mm",
         },
         mechanical: {
@@ -262,9 +188,14 @@ export default function Products() {
           <table className="w-full">
             <tbody>
               {Object.entries(specs).map(([key, value]) => (
-                <tr key={key} className="border-b border-gray-200 last:border-b-0">
+                <tr
+                  key={key}
+                  className="border-b border-gray-200 last:border-b-0"
+                >
                   <td className="py-2 font-medium text-gray-700 capitalize">
-                    {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                    {key
+                      .replace(/([A-Z])/g, " $1")
+                      .replace(/^./, (str) => str.toUpperCase())}
                   </td>
                   <td className="py-2 text-gray-600">{value}</td>
                 </tr>
@@ -279,22 +210,37 @@ export default function Products() {
   const renderHardwareComponents = (components) => {
     return (
       <div className="mb-6">
-        <h3 className="text-lg font-semibold text-[#ff6600] mb-3">Hardware Components</h3>
+        <h3 className="text-lg font-semibold text-[#ff6600] mb-3">
+          Hardware Components
+        </h3>
         <div className="bg-gray-50 rounded-lg p-4">
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-300">
-                <th className="text-left py-2 font-medium text-gray-700">Component</th>
-                <th className="text-left py-2 font-medium text-gray-700">Quantity</th>
-                <th className="text-left py-2 font-medium text-gray-700">Remarks/Description</th>
+                <th className="text-left py-2 font-medium text-gray-700">
+                  Component
+                </th>
+                <th className="text-left py-2 font-medium text-gray-700">
+                  Quantity
+                </th>
+                <th className="text-left py-2 font-medium text-gray-700">
+                  Remarks/Description
+                </th>
               </tr>
             </thead>
             <tbody>
               {components.map((item, index) => (
-                <tr key={index} className="border-b border-gray-200 last:border-b-0">
-                  <td className="py-2 font-medium text-gray-700">{item.component}</td>
-                  <td className="py-2 text-gray-600">{item.quantity || '-'}</td>
-                  <td className="py-2 text-gray-600">{item.remarks || item.description || '-'}</td>
+                <tr
+                  key={index}
+                  className="border-b border-gray-200 last:border-b-0"
+                >
+                  <td className="py-2 font-medium text-gray-700">
+                    {item.component}
+                  </td>
+                  <td className="py-2 text-gray-600">{item.quantity || "-"}</td>
+                  <td className="py-2 text-gray-600">
+                    {item.remarks || item.description || "-"}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -306,10 +252,11 @@ export default function Products() {
 
   return (
     <section
-      className="bg-white z-10 relative text-black flex flex-col ml-2"
+      className="bg-white z-10 relative text-black flex flex-col ml-2 px-6 lg:px-24"
       id="products"
     >
-      <SectionTitle title="Our Products" /><br />
+      <SectionTitle title="Our Products" />
+      <br />
 
       <Carousel
         className="w-full mt-6"
@@ -375,19 +322,48 @@ export default function Products() {
               />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-gray-800">{selectedProduct?.name}</h2>
+              <h2 className="text-2xl font-bold text-gray-800">
+                {selectedProduct?.name}
+              </h2>
               <p className="text-gray-600">{selectedProduct?.description}</p>
             </div>
           </div>
 
           <div className="space-y-6">
-            {selectedProduct?.techSpecs.general && renderSpecTable("General Information", selectedProduct.techSpecs.general)}
-            {selectedProduct?.techSpecs.powerAndController && renderSpecTable("Power Supply & Controller", selectedProduct.techSpecs.powerAndController)}
-            {selectedProduct?.techSpecs.allTerrain && renderSpecTable("All-Terrain Capabilities", selectedProduct.techSpecs.allTerrain)}
-            {selectedProduct?.techSpecs.mechanical && renderSpecTable("Mechanical Specifications", selectedProduct.techSpecs.mechanical)}
-            {selectedProduct?.techSpecs.additional && renderSpecTable("Additional Information", selectedProduct.techSpecs.additional)}
-            {selectedProduct?.techSpecs.environment && renderSpecTable("Environment Conditions", selectedProduct.techSpecs.environment)}
-            {selectedProduct?.techSpecs.hardwareComponents && renderHardwareComponents(selectedProduct.techSpecs.hardwareComponents)}
+            {selectedProduct?.techSpecs.general &&
+              renderSpecTable(
+                "General Information",
+                selectedProduct.techSpecs.general
+              )}
+            {selectedProduct?.techSpecs.powerAndController &&
+              renderSpecTable(
+                "Power Supply & Controller",
+                selectedProduct.techSpecs.powerAndController
+              )}
+            {selectedProduct?.techSpecs.allTerrain &&
+              renderSpecTable(
+                "All-Terrain Capabilities",
+                selectedProduct.techSpecs.allTerrain
+              )}
+            {selectedProduct?.techSpecs.mechanical &&
+              renderSpecTable(
+                "Mechanical Specifications",
+                selectedProduct.techSpecs.mechanical
+              )}
+            {selectedProduct?.techSpecs.additional &&
+              renderSpecTable(
+                "Additional Information",
+                selectedProduct.techSpecs.additional
+              )}
+            {selectedProduct?.techSpecs.environment &&
+              renderSpecTable(
+                "Environment Conditions",
+                selectedProduct.techSpecs.environment
+              )}
+            {selectedProduct?.techSpecs.hardwareComponents &&
+              renderHardwareComponents(
+                selectedProduct.techSpecs.hardwareComponents
+              )}
           </div>
         </div>
       </Modal>
