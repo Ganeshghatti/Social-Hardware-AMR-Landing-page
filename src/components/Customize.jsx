@@ -48,7 +48,9 @@ export default function Customise() {
           payload: 1,
           reach: 200,
         });
-        showSuccess("Custom quotation request sent successfully! We'll email you the details soon.");
+        showSuccess(
+          "Custom quotation request sent successfully! We'll email you the details soon."
+        );
       }
     } catch (error) {
       showError("Failed to send request. Please try again later.");
@@ -88,7 +90,7 @@ export default function Customise() {
                   </label>
                 </div>
                 <Slider
-                  defaultValue={[1]}
+                  defaultValue={[3.5]}
                   min={1}
                   max={15}
                   step={0.5}
@@ -115,8 +117,8 @@ export default function Customise() {
                   </label>
                 </div>
                 <Slider
-                  defaultValue={[200]}
-                  min={200}
+                  defaultValue={[820]}
+                  min={500}
                   max={2000}
                   step={20}
                   value={[formData.reach]}

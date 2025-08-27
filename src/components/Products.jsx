@@ -77,18 +77,6 @@ export default function Products() {
           maxClimbAngle: "30° (including stairs)",
           maxObstacleHeight: "150 mm",
         },
-        hardwareComponents: [
-          {
-            component: "Track Material",
-            description:
-              "Kevlar-embedded rubber for durability and flexibility",
-          },
-          {
-            component: "Mounting Plate",
-            description:
-              "Supports LIDAR, robotic arms, payloads, cameras, sensors, tools",
-          },
-        ],
       },
     },
     {
@@ -109,22 +97,6 @@ export default function Products() {
           maxClimbAngle: "40° (including stairs)",
           maxObstacleHeight: "200 mm",
         },
-        hardwareComponents: [
-          {
-            component: "Track Material",
-            description:
-              "Kevlar-embedded rubber for durability and flexibility",
-          },
-          {
-            component: "Suspension System",
-            description:
-              "Christie and Matilda four-wheel balanced configuration",
-          },
-          {
-            component: "Vibration Reduction",
-            description: "6 independent vibration absorbers on each side",
-          },
-        ],
       },
     },
     {
@@ -191,49 +163,6 @@ export default function Products() {
                       .replace(/^./, (str) => str.toUpperCase())}
                   </td>
                   <td className="py-2 text-gray-600 w-1/2">{value}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    );
-  };
-
-  const renderHardwareComponents = (components) => {
-    return (
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold text-[#ff6600] mb-3">
-          Hardware Components
-        </h3>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <table className="w-full">
-            <thead>
-              <tr className="border-b border-gray-300">
-                <th className="text-left py-2 font-medium text-gray-700">
-                  Component
-                </th>
-                <th className="text-left py-2 font-medium text-gray-700">
-                  Quantity
-                </th>
-                <th className="text-left py-2 font-medium text-gray-700">
-                  Remarks/Description
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {components.map((item, index) => (
-                <tr
-                  key={index}
-                  className="border-b border-gray-200 last:border-b-0"
-                >
-                  <td className="py-2 font-medium text-gray-700">
-                    {item.component}
-                  </td>
-                  <td className="py-2 text-gray-600">{item.quantity || "-"}</td>
-                  <td className="py-2 text-gray-600">
-                    {item.remarks || item.description || "-"}
-                  </td>
                 </tr>
               ))}
             </tbody>
@@ -352,10 +281,6 @@ export default function Products() {
               renderSpecTable(
                 "Environment Conditions",
                 selectedProduct.techSpecs.environment
-              )}
-            {selectedProduct?.techSpecs.hardwareComponents &&
-              renderHardwareComponents(
-                selectedProduct.techSpecs.hardwareComponents
               )}
           </div>
         </div>

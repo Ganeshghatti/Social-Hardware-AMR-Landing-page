@@ -105,7 +105,7 @@ export default function Hero() {
         alt="Background pattern"
         width={500}
         height={400}
-        className="absolute -bottom-1/5 left-0 w-4/5 h-full object-cover z-0 opacity-15"
+        className="absolute -bottom-1/5 left-0 w-11/12 md:w-4/5 h-full object-cover z-0 opacity-15"
       />
     </section>
   );
