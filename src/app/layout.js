@@ -15,6 +15,27 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Social Hardware",
   description: "Indigenous Robots for Global Challenges",
+  icons: {
+    icon: [
+      {
+        url: "/Icon.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/Icon.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/Icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {

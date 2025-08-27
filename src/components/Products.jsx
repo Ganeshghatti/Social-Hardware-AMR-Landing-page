@@ -70,6 +70,8 @@ export default function Products() {
           maxLoad: "120 kg",
           groundClearance: "70 mm",
           maxDragWeight: "150 kg",
+          maxOperatingSpeed: "10 km/h",
+          protectionGrade: "IP54",
         },
         allTerrain: {
           maxClimbAngle: "30° (including stairs)",
@@ -87,12 +89,6 @@ export default function Products() {
               "Supports LIDAR, robotic arms, payloads, cameras, sensors, tools",
           },
         ],
-        additional: {
-          operatingTemperature: "0°C to +45°C",
-          maxOperatingSpeed: "10 km/h",
-          vibrationReduction: "6 independent vibration absorbers on each side",
-          protectionGrade: "IP54",
-        },
       },
     },
     {
@@ -106,6 +102,8 @@ export default function Products() {
           weight: "180 kg",
           height: "426 mm",
           maxLoad: "260 kg",
+          maxOperatingSpeed: "10 km/h",
+          protectionGrade: "IP54",
         },
         allTerrain: {
           maxClimbAngle: "40° (including stairs)",
@@ -127,11 +125,6 @@ export default function Products() {
             description: "6 independent vibration absorbers on each side",
           },
         ],
-        additional: {
-          operatingTemperature: "0°C to +45°C",
-          maxOperatingSpeed: "10 km/h",
-          protectionGrade: "IP54",
-        },
       },
     },
     {
