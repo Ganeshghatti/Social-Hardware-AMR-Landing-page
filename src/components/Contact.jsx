@@ -36,7 +36,7 @@ export default function Contact() {
         formData
       );
 
-      if (response.status === 200) {
+      if (response.status === 200 || response.status === 201) {
         setFormData({
           name: "",
           email: "",
