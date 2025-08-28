@@ -8,7 +8,7 @@ import Footer from "@/ui/Footer";
 import Navbar from "@/ui/Navbar";
 import Image from "next/image";
 import CompanyProfile from "@/components/CompanyProfile";
-import PrabhalModules from "@/components/PrabhalModules";
+import PrabalModules from "@/components/PrabalModules";
 import Gallery from "@/components/Gallery";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
       <Hero />
       <Products />
       <Customize />
-      <PrabhalModules />
+      <PrabalModules />
       <Contact />
       <Advantages />
       {/* <AdvantagesV1 /> */}
