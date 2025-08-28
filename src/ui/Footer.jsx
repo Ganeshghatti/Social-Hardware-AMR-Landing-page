@@ -35,7 +35,7 @@ export default function Footer() {
             height={50}
             className="object-contain"
           />
-          <div className="text-sm space-y-3">
+          <div className="text-sm space-y-4">
             <p className="font-semibold flex items-center gap-2">
               <FaMapMarkerAlt className="text-[#ff6600]" />
               Corporate Office:
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
 
         {/* ISO Certifications */}
-        <div className="text-sm space-y-2">
+        <div className="text-sm space-y-2 mt-3">
           <h3 className="font-semibold flex items-center gap-2">
             ISO Certifications
           </h3>
@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-col space-y-1 items-center text-center">
+        <div className="flex flex-col space-y-1 items-center text-center mt-3">
           <h3 className="font-semibold">Links</h3>
           <br />
           <ul className="flex flex-col gap-3 text-sm text-gray-800">
