@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function PrabalModules() {
   return (
     <section className="bg-white px-6 lg:px-24 bg-gradient-to-b from-gray-50 to-white border border-gray-200 py-12 w-full">
-      <SectionTitle title="Prabhal System" />
+      <SectionTitle title="Prabal System" />
       <Image
         src="/prabal_system_modules.png"
         alt="Prabal system"

@@ -35,7 +35,7 @@ export default function Footer() {
             height={50}
             className="object-contain"
           />
-          <div className="text-sm space-y-2">
+          <div className="text-sm space-y-3">
             <p className="font-semibold flex items-center gap-2">
               <FaMapMarkerAlt className="text-[#ff6600]" />
               Corporate Office:
@@ -85,7 +85,7 @@ export default function Footer() {
             ISO Certifications
           </h3>
           <br />
-          <ul className="space-y-2 ml-1 list-disc pl-5">
+          <ul className="space-y-4">
             <li>
               <span className="font-semibold">ISO 9001:2015</span>: Quality
               Management System
