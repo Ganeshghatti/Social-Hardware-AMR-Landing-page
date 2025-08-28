@@ -58,6 +58,20 @@ export default function Products() {
       },
     },
     {
+      name: "Vision System",
+      description: "7-DOF Dual-Arm Robotic Arm controlled by vision system",
+      image: "/Products/vision-system.png",
+      techSpecs: {
+        general: {
+          armLength: "820 mm",
+          singleArmMaxLoad: "3.5 kg",
+          degreesOfFreedom: 7,
+          repeatPositionAccuracy: "0.28 mm",
+          robotWeight: "45 kg",
+        },
+      },
+    },
+    {
       name: "LITE ALL-TERRAIN UGV",
       description:
         "Lightweight unmanned ground vehicle with versatile all-terrain capability.",
