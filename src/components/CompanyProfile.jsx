@@ -10,6 +10,7 @@ import Image from "next/image";
 
 export default function CompanyProfile() {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const { showSuccess, showError } = useToast();
 
@@ -27,11 +28,12 @@ export default function CompanyProfile() {
     try {
       const res = await axios.post(
         "https://www.socialhardware.in/api/send-company-profile",
-        { email }
+        { email, name }
       );
       if (res.status === 200) {
         showSuccess("Thank you! The company profile will be sent to your inbox.");
         setEmail("");
+        setName("");
       } else {
         showError("Sorry, there was a problem sending the profile. Please try again later.");
       }
@@ -71,49 +73,27 @@ export default function CompanyProfile() {
             />
           </div>
 
-          <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-6 lg:space-y-12 pt-8 lg:pt-11 pb-6 lg:pb-4 min-h-[200px] lg:min-h-0">
+          <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-6 lg:space-y-8 pt-1 lg:pt-1 pb-6 lg:pb-4 min-h-[200px] lg:min-h-0">
             {/* form */}
             <form
-              className="w-full max-w-[525px] h-[60px] lg:h-[71px] flex overflow-hidden bg-white border border-gray-200 shadow-lg focus-within:ring-2 focus-within:ring-white mx-4 lg:mx-0"
+              className="w-full max-w-[525px] flex flex-col gap-3 mx-4 lg:mx-0 rounded-md items-center justify-center pt-4"
               onSubmit={handleSubmit}
             >
-              <div className="flex items-center px-2 lg:px-1 ml-1 lg:ml-2">
-                <svg
-                  className="w-4 h-4 lg:w-5 lg:h-5"
-                  viewBox="0 0 512 512"
-                  aria-hidden="true"
-                >
-                  <rect x="0" y="64" width="512" height="384" fill="#EF616A" />
-                  <polyline
-                    points="16,96 256,288 496,96"
-                    fill="none"
-                    stroke="#ffffff"
-                    strokeWidth="28"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <polyline
-                    points="16,448 208,248"
-                    fill="none"
-                    stroke="#ffffff"
-                    strokeWidth="28"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <polyline
-                    points="496,448 304,248"
-                    fill="none"
-                    stroke="#ffffff"
-                    strokeWidth="28"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+              <input
+                type="text"
+                placeholder="Name"
+                className="w-full max-w-[400px] h-[40px] text-center text-gray-700 text-[14px] lg:text-[16px] px-3 placeholder-gray-500 border-b border-gray-700 sm:border-b-2 focus:outline-none"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                disabled={loading}
+                required
+                aria-label="Your name"
+              />
               <input
                 type="email"
-                placeholder="Enter your Email address"
-                className="flex-1 text-black text-[14px] lg:text-[16px] px-2 bg-transparent text-base placeholder-gray-400 focus:outline-none"
+                name="email"
+                placeholder="Email"
+                className="w-full max-w-[400px] h-[40px] text-gray-700 text-[14px] text-center lg:text-[16px] px-3 placeholder-gray-500 border-b border-gray-700 sm:border-b-2 focus:outline-none"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={loading}
@@ -122,7 +102,7 @@ export default function CompanyProfile() {
               />
               <button
                 type="submit"
-                className={`text-white w-[120px] lg:w-[203px] h-full text-[14px] lg:text-[16px] font-semibold bg-[#ff6600] transition-colors hover:bg-[#e65c00] focus:outline-none ${
+                className={`text-white w-[200px] h-[48px] text-[14px] lg:text-[16px] font-semibold bg-[#ff6600] transition-colors hover:bg-[#e65c00] mt-2 rounded-md focus:outline-none ${
                   loading ? "opacity-60 cursor-not-allowed" : "cursor-pointer"
                 }`}
                 disabled={loading}
@@ -130,21 +110,6 @@ export default function CompanyProfile() {
                 {loading ? "Sending..." : "Send"}
               </button>
             </form>
-
-            <ul className="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 text-center text-[14px] lg:text-[16px] font-medium px-4">
-              <li className="flex items-center justify-center gap-2 text-white">
-                <div className="w-4 h-4 lg:w-5 lg:h-5 bg-white rounded-full"></div>
-                Capabilities snapshot
-              </li>
-              <li className="flex items-center justify-center gap-2 text-white">
-                <div className="w-4 h-4 lg:w-5 lg:h-5 bg-white rounded-full"></div>
-                Product highlights
-              </li>
-              <li className="flex items-center justify-center gap-2 text-white">
-                <div className="w-4 h-4 lg:w-5 lg:h-5 bg-white rounded-full"></div>
-                Case studies
-              </li>
-            </ul>
           </div>
         </div>
       </div>

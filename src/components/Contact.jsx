@@ -1,13 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import SectionTitle from "@/ui/SectionTitle";
 import { FaUser, FaEnvelope, FaPhone, FaCommentAlt } from "react-icons/fa";
 import axios from "axios";
 import { useToast } from "./Toast";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
+
+  const reCaptchaRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,6 +20,7 @@ export default function Contact() {
     countryCode: "+91",
   });
   const [loading, setLoading] = useState(false);
+  const [captchaSize, setCaptchaSize] = useState(null);
   const { showSuccess, showError } = useToast();
 
   const handleChange = (e) => {
@@ -29,6 +34,12 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    if(!reCaptchaRef.current.getValue()) {
+      showError("Please verify that you are not a robot.");
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await axios.post(
@@ -53,6 +64,14 @@ export default function Contact() {
       setLoading(false);
     }
   };
+
+
+  useEffect(() => {
+    const updateSize = () => setCaptchaSize(window.innerWidth < 444 ? "compact" : "normal");
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   return (
     <section
@@ -157,6 +176,14 @@ export default function Contact() {
                   onChange={handleChange}
                   className="mt-2 w-full bg-gray-50 border border-gray-300 rounded-md px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff6600] focus:border-transparent"
                 ></textarea>
+              </div>
+              <div className="flex justify-center">
+                <ReCAPTCHA 
+                  key={captchaSize}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} 
+                  ref={reCaptchaRef}
+                  size={captchaSize}
+                />
               </div>
               <button
                 type="submit"
