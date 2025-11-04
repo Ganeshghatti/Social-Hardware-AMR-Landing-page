@@ -130,21 +130,6 @@ export default function CompanyProfile() {
                 {loading ? "Sending..." : "Send"}
               </button>
             </form>
-
-            <ul className="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 text-center text-[14px] lg:text-[16px] font-medium px-4">
-              <li className="flex items-center justify-center gap-2 text-white">
-                <div className="w-4 h-4 lg:w-5 lg:h-5 bg-white rounded-full"></div>
-                Capabilities snapshot
-              </li>
-              <li className="flex items-center justify-center gap-2 text-white">
-                <div className="w-4 h-4 lg:w-5 lg:h-5 bg-white rounded-full"></div>
-                Product highlights
-              </li>
-              <li className="flex items-center justify-center gap-2 text-white">
-                <div className="w-4 h-4 lg:w-5 lg:h-5 bg-white rounded-full"></div>
-                Case studies
-              </li>
-            </ul>
           </div>
         </div>
       </div>
